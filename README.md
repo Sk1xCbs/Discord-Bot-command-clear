@@ -1,2 +1,4 @@
-# Discord-Bot-command-clear
-Command Clear for your bot in Node.JS and the library Discord.js
+1- EN EL INDEX.JS DEBAJO DE => "client.on('ready', async () => {
+    console.log('Listo');
+    presence();
+})" // Ponde el comando que os pase en el archivo Command y ya.
