@@ -1,0 +1,14 @@
+else if(command == "clear"){
+    if(!message.guild.me.hasPermissions("MANGE_MESSAGES")) return message.channel.send("No tengo los permisos necesarios para hacer esta accion")
+    if(!args[0]) return message.channel.send("Necesitas poner el número de mensajes que quieras eliminar, debe ser menos de 100")
+    let number = args[0]
+    let(isNaN(number)) return message.channel.send("Necesitas colocar un numero, no letras ni simbolos")
+    number = parseInt(number)
+    if(number >= 100 || number <= 0) return message.channel.send("El valor es invalido")
+    message.channel.bulkDelete(number + 1).then( () => {
+        message.channel.send(`se elimino ${number} mensajes`)
+    }).catch(error =>{
+        message.channel.send(`Ocurrio un error: ${error.message}`)
+    })
+
+}
